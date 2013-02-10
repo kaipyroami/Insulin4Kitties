@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2703368C1693B9DF0014E080 /* Untitled-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2703368B1693B9DF0014E080 /* Untitled-iPad.png */; };
+		2703368F1693B9E20014E080 /* Untitled-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2703368E1693B9E20014E080 /* Untitled-iPad@2x.png */; };
+		270336911693D1040014E080 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 270336901693D1040014E080 /* Default-Portrait~ipad.png */; };
+		270336931693D10B0014E080 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 270336921693D10B0014E080 /* Default-Portrait@2x~ipad.png */; };
+		270336951693D1150014E080 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 270336941693D1150014E080 /* Default-Landscape@2x~ipad.png */; };
+		270336971693D11E0014E080 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 270336961693D11E0014E080 /* Default-Landscape~ipad.png */; };
+		270C6B2016A4AF4900E8BB4B /* Syringe_Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 270C6B1F16A4AF4900E8BB4B /* Syringe_Overlay.png */; };
+		270C6B2316A4F4D600E8BB4B /* haarcascade_FF.xml in Resources */ = {isa = PBXBuildFile; fileRef = 270C6B2116A4F4D600E8BB4B /* haarcascade_FF.xml */; };
+		270C6B2416A4F4D600E8BB4B /* haarcascade_TF.xml in Resources */ = {isa = PBXBuildFile; fileRef = 270C6B2216A4F4D600E8BB4B /* haarcascade_TF.xml */; };
+		2714D73916B8B6D100E85533 /* haarcascade_FF_2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2714D73716B8B6D100E85533 /* haarcascade_FF_2.xml */; };
+		2714D73A16B8B6D100E85533 /* haarcascade_TF_2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2714D73816B8B6D100E85533 /* haarcascade_TF_2.xml */; };
+		274CF8261699600200D422D5 /* InfoScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274CF8251699600200D422D5 /* InfoScreenViewController.m */; };
+		274E9C06169E8690009CA5D5 /* OpenCV_Logo_with_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */; };
 		27D12DFF169205A400F5DCF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12DFE169205A400F5DCF8 /* UIKit.framework */; };
 		27D12E01169205A400F5DCF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E00169205A400F5DCF8 /* Foundation.framework */; };
 		27D12E03169205A400F5DCF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E02169205A400F5DCF8 /* CoreGraphics.framework */; };
@@ -23,6 +36,15 @@
 		27D12E25169205A400F5DCF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E00169205A400F5DCF8 /* Foundation.framework */; };
 		27D12E2D169205A400F5DCF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27D12E2B169205A400F5DCF8 /* InfoPlist.strings */; };
 		27D12E30169205A400F5DCF8 /* Insulin4KittiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D12E2F169205A400F5DCF8 /* Insulin4KittiesTests.m */; };
+		27D12E3A16920C5100F5DCF8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3916920C5100F5DCF8 /* opencv2.framework */; };
+		27D12E3C1692395300F5DCF8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3B1692395300F5DCF8 /* Accelerate.framework */; };
+		27D12E3E1692396000F5DCF8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3D1692396000F5DCF8 /* AssetsLibrary.framework */; };
+		27D12E401692396500F5DCF8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3F1692396500F5DCF8 /* AVFoundation.framework */; };
+		27D12E421692398C00F5DCF8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E411692398C00F5DCF8 /* CoreImage.framework */; };
+		27D12E441692399A00F5DCF8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E431692399A00F5DCF8 /* CoreMedia.framework */; };
+		27D12E46169239A300F5DCF8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E45169239A300F5DCF8 /* CoreVideo.framework */; };
+		27D12E48169239B300F5DCF8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E47169239B300F5DCF8 /* QuartzCore.framework */; };
+		27F59FEB16B6302600557554 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F59FEA16B6302600557554 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +58,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2703368B1693B9DF0014E080 /* Untitled-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Untitled-iPad.png"; path = "../Untitled-iPad.png"; sourceTree = "<group>"; };
+		2703368E1693B9E20014E080 /* Untitled-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Untitled-iPad@2x.png"; path = "../Untitled-iPad@2x.png"; sourceTree = "<group>"; };
+		270336901693D1040014E080 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		270336921693D10B0014E080 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		270336941693D1150014E080 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		270336961693D11E0014E080 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		270C6B1F16A4AF4900E8BB4B /* Syringe_Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Syringe_Overlay.png; sourceTree = "<group>"; };
+		270C6B2116A4F4D600E8BB4B /* haarcascade_FF.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_FF.xml; sourceTree = "<group>"; };
+		270C6B2216A4F4D600E8BB4B /* haarcascade_TF.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF.xml; sourceTree = "<group>"; };
+		2714D73716B8B6D100E85533 /* haarcascade_FF_2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_FF_2.xml; sourceTree = "<group>"; };
+		2714D73816B8B6D100E85533 /* haarcascade_TF_2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_2.xml; sourceTree = "<group>"; };
+		274CF8241699600200D422D5 /* InfoScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoScreenViewController.h; sourceTree = "<group>"; };
+		274CF8251699600200D422D5 /* InfoScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScreenViewController.m; sourceTree = "<group>"; };
+		274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenCV_Logo_with_text.png; sourceTree = "<group>"; };
 		27D12DFA169205A400F5DCF8 /* Insulin4Kitties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insulin4Kitties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D12DFE169205A400F5DCF8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27D12E00169205A400F5DCF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,19 +81,28 @@
 		27D12E0A169205A400F5DCF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27D12E0C169205A400F5DCF8 /* Insulin4Kitties-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Insulin4Kitties-Prefix.pch"; sourceTree = "<group>"; };
 		27D12E0D169205A400F5DCF8 /* Insulin4KittiesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Insulin4KittiesAppDelegate.h; sourceTree = "<group>"; };
-		27D12E0E169205A400F5DCF8 /* Insulin4KittiesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Insulin4KittiesAppDelegate.m; sourceTree = "<group>"; };
+		27D12E0E169205A400F5DCF8 /* Insulin4KittiesAppDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = Insulin4KittiesAppDelegate.m; sourceTree = "<group>"; };
 		27D12E10169205A400F5DCF8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		27D12E12169205A400F5DCF8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		27D12E14169205A400F5DCF8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		27D12E17169205A400F5DCF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		27D12E19169205A400F5DCF8 /* Insulin4KittiesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Insulin4KittiesViewController.h; sourceTree = "<group>"; };
-		27D12E1A169205A400F5DCF8 /* Insulin4KittiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Insulin4KittiesViewController.m; sourceTree = "<group>"; };
+		27D12E1A169205A400F5DCF8 /* Insulin4KittiesViewController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = Insulin4KittiesViewController.m; sourceTree = "<group>"; };
 		27D12E21169205A400F5DCF8 /* Insulin4KittiesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Insulin4KittiesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D12E22169205A400F5DCF8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		27D12E2A169205A400F5DCF8 /* Insulin4KittiesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Insulin4KittiesTests-Info.plist"; sourceTree = "<group>"; };
 		27D12E2C169205A400F5DCF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27D12E2E169205A400F5DCF8 /* Insulin4KittiesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Insulin4KittiesTests.h; sourceTree = "<group>"; };
 		27D12E2F169205A400F5DCF8 /* Insulin4KittiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Insulin4KittiesTests.m; sourceTree = "<group>"; };
+		27D12E3916920C5100F5DCF8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		27D12E3B1692395300F5DCF8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		27D12E3D1692396000F5DCF8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		27D12E3F1692396500F5DCF8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27D12E411692398C00F5DCF8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		27D12E431692399A00F5DCF8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		27D12E45169239A300F5DCF8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		27D12E47169239B300F5DCF8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		27F59FEA16B6302600557554 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +110,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F59FEB16B6302600557554 /* ImageIO.framework in Frameworks */,
 				27D12DFF169205A400F5DCF8 /* UIKit.framework in Frameworks */,
-				27D12E01169205A400F5DCF8 /* Foundation.framework in Frameworks */,
+				27D12E48169239B300F5DCF8 /* QuartzCore.framework in Frameworks */,
+				27D12E46169239A300F5DCF8 /* CoreVideo.framework in Frameworks */,
+				27D12E441692399A00F5DCF8 /* CoreMedia.framework in Frameworks */,
+				27D12E421692398C00F5DCF8 /* CoreImage.framework in Frameworks */,
 				27D12E03169205A400F5DCF8 /* CoreGraphics.framework in Frameworks */,
+				27D12E401692396500F5DCF8 /* AVFoundation.framework in Frameworks */,
+				27D12E3E1692396000F5DCF8 /* AssetsLibrary.framework in Frameworks */,
+				27D12E3C1692395300F5DCF8 /* Accelerate.framework in Frameworks */,
+				27D12E01169205A400F5DCF8 /* Foundation.framework in Frameworks */,
+				27D12E3A16920C5100F5DCF8 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +160,15 @@
 		27D12DFD169205A400F5DCF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27F59FEA16B6302600557554 /* ImageIO.framework */,
+				27D12E47169239B300F5DCF8 /* QuartzCore.framework */,
+				27D12E45169239A300F5DCF8 /* CoreVideo.framework */,
+				27D12E431692399A00F5DCF8 /* CoreMedia.framework */,
+				27D12E411692398C00F5DCF8 /* CoreImage.framework */,
+				27D12E3F1692396500F5DCF8 /* AVFoundation.framework */,
+				27D12E3D1692396000F5DCF8 /* AssetsLibrary.framework */,
+				27D12E3B1692395300F5DCF8 /* Accelerate.framework */,
+				27D12E3916920C5100F5DCF8 /* opencv2.framework */,
 				27D12DFE169205A400F5DCF8 /* UIKit.framework */,
 				27D12E00169205A400F5DCF8 /* Foundation.framework */,
 				27D12E02169205A400F5DCF8 /* CoreGraphics.framework */,
@@ -120,6 +183,8 @@
 				27D12E0D169205A400F5DCF8 /* Insulin4KittiesAppDelegate.h */,
 				27D12E0E169205A400F5DCF8 /* Insulin4KittiesAppDelegate.m */,
 				27D12E16169205A400F5DCF8 /* MainStoryboard.storyboard */,
+				274CF8241699600200D422D5 /* InfoScreenViewController.h */,
+				274CF8251699600200D422D5 /* InfoScreenViewController.m */,
 				27D12E19169205A400F5DCF8 /* Insulin4KittiesViewController.h */,
 				27D12E1A169205A400F5DCF8 /* Insulin4KittiesViewController.m */,
 				27D12E05169205A400F5DCF8 /* Supporting Files */,
@@ -130,6 +195,18 @@
 		27D12E05169205A400F5DCF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2714D73716B8B6D100E85533 /* haarcascade_FF_2.xml */,
+				2714D73816B8B6D100E85533 /* haarcascade_TF_2.xml */,
+				270C6B2116A4F4D600E8BB4B /* haarcascade_FF.xml */,
+				270C6B2216A4F4D600E8BB4B /* haarcascade_TF.xml */,
+				270C6B1F16A4AF4900E8BB4B /* Syringe_Overlay.png */,
+				270336961693D11E0014E080 /* Default-Landscape~ipad.png */,
+				270336941693D1150014E080 /* Default-Landscape@2x~ipad.png */,
+				270336921693D10B0014E080 /* Default-Portrait@2x~ipad.png */,
+				270336901693D1040014E080 /* Default-Portrait~ipad.png */,
+				2703368E1693B9E20014E080 /* Untitled-iPad@2x.png */,
+				274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */,
+				2703368B1693B9DF0014E080 /* Untitled-iPad.png */,
 				27D12E06169205A400F5DCF8 /* Insulin4Kitties-Info.plist */,
 				27D12E07169205A400F5DCF8 /* InfoPlist.strings */,
 				27D12E0A169205A400F5DCF8 /* main.m */,
@@ -237,6 +314,18 @@
 				27D12E13169205A400F5DCF8 /* Default@2x.png in Resources */,
 				27D12E15169205A400F5DCF8 /* Default-568h@2x.png in Resources */,
 				27D12E18169205A400F5DCF8 /* MainStoryboard.storyboard in Resources */,
+				2703368C1693B9DF0014E080 /* Untitled-iPad.png in Resources */,
+				2703368F1693B9E20014E080 /* Untitled-iPad@2x.png in Resources */,
+				270336911693D1040014E080 /* Default-Portrait~ipad.png in Resources */,
+				270336931693D10B0014E080 /* Default-Portrait@2x~ipad.png in Resources */,
+				270336951693D1150014E080 /* Default-Landscape@2x~ipad.png in Resources */,
+				270336971693D11E0014E080 /* Default-Landscape~ipad.png in Resources */,
+				274E9C06169E8690009CA5D5 /* OpenCV_Logo_with_text.png in Resources */,
+				270C6B2016A4AF4900E8BB4B /* Syringe_Overlay.png in Resources */,
+				270C6B2316A4F4D600E8BB4B /* haarcascade_FF.xml in Resources */,
+				270C6B2416A4F4D600E8BB4B /* haarcascade_TF.xml in Resources */,
+				2714D73916B8B6D100E85533 /* haarcascade_FF_2.xml in Resources */,
+				2714D73A16B8B6D100E85533 /* haarcascade_TF_2.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +363,7 @@
 				27D12E0B169205A400F5DCF8 /* main.m in Sources */,
 				27D12E0F169205A400F5DCF8 /* Insulin4KittiesAppDelegate.m in Sources */,
 				27D12E1B169205A400F5DCF8 /* Insulin4KittiesViewController.m in Sources */,
+				274CF8261699600200D422D5 /* InfoScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,9 +468,14 @@
 		27D12E34169205A400F5DCF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Insulin4Kitties/Insulin4Kitties-Prefix.pch";
 				INFOPLIST_FILE = "Insulin4Kitties/Insulin4Kitties-Info.plist";
+				OTHER_CFLAGS = "-fnested-functions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -389,9 +484,17 @@
 		27D12E35169205A400F5DCF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Insulin4Kitties/Insulin4Kitties-Prefix.pch";
 				INFOPLIST_FILE = "Insulin4Kitties/Insulin4Kitties-Info.plist";
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"-fnested-functions",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -450,6 +553,7 @@
 				27D12E35169205A400F5DCF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27D12E36169205A400F5DCF8 /* Build configuration list for PBXNativeTarget "Insulin4KittiesTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +562,7 @@
 				27D12E38169205A400F5DCF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
