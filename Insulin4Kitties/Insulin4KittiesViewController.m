@@ -10,7 +10,7 @@
 
 #define detectMinSize 80
 
-NSString * const TFCascadeFilename = @"haarcascade_TF";//Strings of haar file names
+NSString * const TFCascadeFilename = @"haarcascade_TF_3";//Strings of haar file names
 NSString * const FFCascadeFilename = @"haarcascade_FF_2";
 
 @interface Insulin4KittiesViewController ()

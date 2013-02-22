@@ -20,6 +20,8 @@
 		2714D73A16B8B6D100E85533 /* haarcascade_TF_2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2714D73816B8B6D100E85533 /* haarcascade_TF_2.xml */; };
 		274CF8261699600200D422D5 /* InfoScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274CF8251699600200D422D5 /* InfoScreenViewController.m */; };
 		274E9C06169E8690009CA5D5 /* OpenCV_Logo_with_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */; };
+		27B1AE2A16D8175F00F7376D /* haarcascade_TF_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */; };
+		27B1AE2B16D8175F00F7376D /* haarcascade_TF_3_2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */; };
 		27D12DFF169205A400F5DCF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12DFE169205A400F5DCF8 /* UIKit.framework */; };
 		27D12E01169205A400F5DCF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E00169205A400F5DCF8 /* Foundation.framework */; };
 		27D12E03169205A400F5DCF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E02169205A400F5DCF8 /* CoreGraphics.framework */; };
@@ -72,6 +74,8 @@
 		274CF8241699600200D422D5 /* InfoScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoScreenViewController.h; sourceTree = "<group>"; };
 		274CF8251699600200D422D5 /* InfoScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScreenViewController.m; sourceTree = "<group>"; };
 		274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenCV_Logo_with_text.png; sourceTree = "<group>"; };
+		27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3.xml; sourceTree = "<group>"; };
+		27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3_2.xml; sourceTree = "<group>"; };
 		27D12DFA169205A400F5DCF8 /* Insulin4Kitties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insulin4Kitties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D12DFE169205A400F5DCF8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27D12E00169205A400F5DCF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -195,6 +199,8 @@
 		27D12E05169205A400F5DCF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */,
+				27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */,
 				2714D73716B8B6D100E85533 /* haarcascade_FF_2.xml */,
 				2714D73816B8B6D100E85533 /* haarcascade_TF_2.xml */,
 				270C6B2116A4F4D600E8BB4B /* haarcascade_FF.xml */,
@@ -326,6 +332,8 @@
 				270C6B2416A4F4D600E8BB4B /* haarcascade_TF.xml in Resources */,
 				2714D73916B8B6D100E85533 /* haarcascade_FF_2.xml in Resources */,
 				2714D73A16B8B6D100E85533 /* haarcascade_TF_2.xml in Resources */,
+				27B1AE2A16D8175F00F7376D /* haarcascade_TF_3.xml in Resources */,
+				27B1AE2B16D8175F00F7376D /* haarcascade_TF_3_2.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
