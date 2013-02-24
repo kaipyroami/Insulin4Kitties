@@ -10,8 +10,10 @@
 
 #define detectMinSize 80
 
+
 NSString * const TFCascadeFilename = @"haarcascade_TF_3";//Strings of haar file names
 NSString * const FFCascadeFilename = @"haarcascade_FF_2";
+NSString * const TIPCascadeFilename = @"haarcascade_TIP";
 
 @interface Insulin4KittiesViewController ()
 
@@ -28,6 +30,7 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
     //Create string of haar file path    
     NSString *TF_cascade_name = [[NSBundle mainBundle] pathForResource:TFCascadeFilename ofType:@"xml"];
     NSString *FF_cascade_name = [[NSBundle mainBundle] pathForResource:FFCascadeFilename ofType:@"xml"];
+    NSString *TIP_cascade_name = [[NSBundle mainBundle] pathForResource:TIPCascadeFilename ofType:@"xml"];
     
     //Load haar files, return error message if fail
     if (!TF_cascade.load( [TF_cascade_name UTF8String] )) {
@@ -38,6 +41,10 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
         NSLog(@"Could not load FF cascade!");
     }
     
+    if (!TIP_cascade.load( [TIP_cascade_name UTF8String])) {
+        NSLog(@"Could not load TIP cascade!");
+    }
+    
     //attach video camera output to imageViewer
     self.videoCamera = [[CvVideoCamera alloc] initWithParentView:_imageViewer];
     self.videoCamera.delegate = self;
@@ -45,7 +52,7 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
     //Configure camera
     self.videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     self.videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetiFrame1280x720;
-    self.videoCamera.defaultFPS = 30;
+    self.videoCamera.defaultFPS = 10;
     self.videoCamera.grayscaleMode = NO;
     
     self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeRight; // Does not seem to be working correctly
@@ -89,12 +96,12 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
     oldTimeInMiliseconds = timeInMiliseconds;
     
     //Location fo detection box in FOV
-    offset_x = 400;
-    offset_y = 150;
+    offset_x = 280;
+    offset_y = 210;
     
     // Dimensions of detection box
-    box_height = 200;
-    box_width = 500;
+    box_height = 140;
+    box_width = 700;
     
     cv::Rect myROI(offset_x, offset_y, box_width, box_height);
     
@@ -103,8 +110,11 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
 
     timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
     
-    NSLog(@"%@",[NSString stringWithFormat:@"FPS: %.3g", (1/(timeInMiliseconds - oldTimeInMiliseconds))]);
+    //NSLog(@"%@",[NSString stringWithFormat:@"FPS: %.3g", (1/(timeInMiliseconds - oldTimeInMiliseconds))]);
+    //NSLog(@"%@",[NSString stringWithFormat:@"%.3g μL", (syringeVolumeInMicroLitres)]);
     
+    NSString *measurement = [NSString stringWithFormat:@"%.3g μL", (syringeVolumeInMicroLitres)];
+    self.measurementText.text = measurement;
 }
 
 /** detectAndDisplay */
@@ -113,6 +123,7 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
 {
     std::vector<cv::Rect> FFs;
     std::vector<cv::Rect> TFs;
+    std::vector<cv::Rect> TIPs;
     
     cv::Mat frame_gray;
     
@@ -120,7 +131,7 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
     equalizeHist( frame_gray, frame_gray );
     
     //-- Make Detection Box
-    rectangle(frame, cvPoint(offset_x,offset_y), cvPoint(offset_x + box_width,offset_y + box_height), cvScalar(0,255,0),1, 1);
+    rectangle(frame, cvPoint(offset_x,offset_y), cvPoint(offset_x + box_width,offset_y + box_height), cvScalar(255,255,0),1, 1);
     
     
     //-- Detect syringe
@@ -134,7 +145,7 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
         ellipse( frame, center, cv::Size( TFs[i].width*0.5, TFs[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 0 ), 4, 8, 0 );
                 
         Mat faceROI = frame_gray( TFs[i] );
-        std::vector<cv::Rect> eyes;        
+        std::vector<cv::Rect> thumbFlange;
     }
     
     
@@ -146,10 +157,45 @@ NSString * const FFCascadeFilename = @"haarcascade_FF_2";
         cv::ellipse( frame, center, cv::Size( FFs[i].width*0.5, FFs[i].height*0.5), 0, 0, 360, Scalar( 0, 0, 255 ), 4, 8, 0 );
         
         Mat faceROI = frame_gray( FFs[i] );
-        std::vector<cv::Rect> eyes;
+        std::vector<cv::Rect> fingerFlange;
     }
     
-
+    TIP_cascade.detectMultiScale( frame_gray, TIPs, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(detectMinSize, detectMinSize) );
+    
+    for( int i = 0; i < TIPs.size(); i++ )
+    {
+        cv::Point center( (TIPs[i].x + TIPs[i].width*0.5) + offset_x, (TIPs[i].y + TIPs[i].height*0.5) + offset_y );
+        cv::ellipse( frame, center, cv::Size( TIPs[i].width*0.5, TIPs[i].height*0.5), 0, 0, 360, Scalar( 0, 255, 0 ), 4, 8, 0 );
+        
+        Mat faceROI = frame_gray( TIPs[i] );
+        std::vector<cv::Rect> tip;
+    }
+    
+    
+    if( !FFs.empty() && !TFs.empty() && !TIPs.empty())
+    {
+        line(frame,
+             cvPoint((TFs[0].x + TFs[0].width*0.5) + offset_x, (TFs[0].y+ TFs[0].height*0.5) + offset_y),
+             cvPoint((FFs[0].x + FFs[0].width*0.5) + offset_x, (FFs[0].y+ FFs[0].height*0.5) + offset_y),
+             cvScalar(0,255,255), 2 );
+        TFtoFF = sqrt(pow(((FFs[0].x + FFs[0].width*0.5) - (TFs[0].x + TFs[0].width*0.5)),2)
+                          + pow(((FFs[0].y+ FFs[0].height*0.5) - (TFs[0].y+ TFs[0].height*0.5)),2));
+        
+        line(frame,
+             cvPoint((TIPs[0].x + TIPs[0].width*0.5) + offset_x, (TIPs[0].y+ TIPs[0].height*0.5) + offset_y),
+             cvPoint((FFs[0].x + FFs[0].width*0.5) + offset_x, (FFs[0].y+ FFs[0].height*0.5) + offset_y),
+             cvScalar(0,255,255), 2 );
+        FFtoTIP = sqrt(pow(((FFs[0].x + FFs[0].width*0.5) - (TIPs[0].x + TIPs[0].width*0.5)),2)
+                       + pow(((FFs[0].y+ FFs[0].height*0.5) - (TIPs[0].y+ TIPs[0].height*0.5)),2));
+    }
+    
+    displacementInMM = (60.0 / (double)FFtoTIP) * (double)TFtoFF;
+    
+    //-- 37.33mm for 30 units
+    //--37.33mm / 30 = 1.244333 mm per unit
+    
+    syringeVolumeInMicroLitres = (displacementInMM / 1.244333 ); // U-100 syringe is 100 units per 1mL or cc
+    
 }
 
 

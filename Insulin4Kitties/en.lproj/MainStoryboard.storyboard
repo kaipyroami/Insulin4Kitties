@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="720" id="YEP-zA-lli"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="-.-- mL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9o-V0-no0">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="-.-- μL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9o-V0-no0">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="BD8-xN-qb8"/>
                                     <constraint firstAttribute="width" constant="340" id="tSL-LY-lZ1"/>
@@ -92,17 +92,17 @@
                         <color key="backgroundColor" red="0.86858865489130432" green="0.86858865489130432" blue="0.86858865489130432" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="BhN-JR-wYz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2i5-dZ-dD7"/>
-                            <constraint firstItem="eiz-ee-S9l" firstAttribute="top" secondItem="5" secondAttribute="top" constant="200" id="4fr-Tl-oFg"/>
                             <constraint firstAttribute="bottom" secondItem="WJg-U7-dSE" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="FhM-cC-b0h"/>
                             <constraint firstItem="AQe-uX-vb3" firstAttribute="trailing" secondItem="WJg-U7-dSE" secondAttribute="trailing" type="default" id="HnN-9i-Che"/>
                             <constraint firstItem="BhN-JR-wYz" firstAttribute="centerY" secondItem="WJg-U7-dSE" secondAttribute="centerY" type="default" id="LhQ-gv-LK6"/>
                             <constraint firstItem="gMp-Xt-MY8" firstAttribute="centerX" secondItem="d9o-V0-no0" secondAttribute="centerX" type="default" id="M4n-2G-w2i"/>
+                            <constraint firstItem="eiz-ee-S9l" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="UZz-mf-9Cm"/>
                             <constraint firstItem="WJg-U7-dSE" firstAttribute="top" secondItem="d9o-V0-no0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dKj-OF-cc8"/>
-                            <constraint firstItem="eiz-ee-S9l" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="354" id="feX-5Y-1kX"/>
                             <constraint firstItem="d9o-V0-no0" firstAttribute="centerY" secondItem="AQe-uX-vb3" secondAttribute="centerY" type="default" id="gQ6-7d-N8x"/>
                             <constraint firstItem="d9o-V0-no0" firstAttribute="centerX" secondItem="WJg-U7-dSE" secondAttribute="centerX" type="default" id="mox-UI-OGk"/>
+                            <constraint firstItem="eiz-ee-S9l" firstAttribute="top" secondItem="5" secondAttribute="top" constant="230" id="tzI-v5-snW"/>
                             <constraint firstItem="gMp-Xt-MY8" firstAttribute="centerY" secondItem="5" secondAttribute="centerY" type="default" id="u9I-NS-KdL"/>
-                            <constraint firstItem="WJg-U7-dSE" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="yG6-mk-ZsN"/>
+                            <constraint firstItem="eiz-ee-S9l" firstAttribute="centerX" secondItem="d9o-V0-no0" secondAttribute="centerX" type="default" id="zJH-pj-nCC"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -157,6 +157,21 @@
         <image name="OpenCV_Logo_with_text.png" width="600" height="739"/>
         <image name="Syringe_Overlay.png" width="3728" height="547"/>
     </resources>
+    <classes>
+        <class className="Insulin4KittiesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Insulin4KittiesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="StartCapture:"/>
+                <relationship kind="outlet" name="alignmentImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="captureButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageViewer" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="measurementText" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

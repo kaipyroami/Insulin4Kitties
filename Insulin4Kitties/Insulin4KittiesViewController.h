@@ -28,6 +28,7 @@ using namespace std;
     
     cv::CascadeClassifier TF_cascade;
     cv::CascadeClassifier FF_cascade;
+    cv::CascadeClassifier TIP_cascade;
     int offset_x;
     int offset_y;
     int box_height;
@@ -35,6 +36,11 @@ using namespace std;
     NSTimeInterval timeInMiliseconds;
     NSTimeInterval oldTimeInMiliseconds;
     Mat frameIn;
+    int FFtoTIP;
+    int TFtoFF;
+    double displacementInMM;
+    double syringeVolumeInMicroLitres; // U-100 syringe is 100 units per 1mL or cc
+    
     
 }
 
