@@ -6,9 +6,19 @@
 //  Copyright (c) 2012 Kyle Crockett. All rights reserved.
 //
 
+//-- 37.33mm for 30 units
+//--37.33mm / 30 = 1.244333 mm per unit
+//--8.37mm is 0 displacement
+// U-100 syringe is 100 units per 1mL or cc
+
 #import "Insulin4KittiesViewController.h"
 
 #define detectMinSize 80
+#define unitsPerMM 1.244333
+#define syringeBodyLength 61.6
+#define plungerZeroDisplacementInMM 8.27
+#define unitScalarOffset 1
+#define unitAdditiveOffset -1
 
 
 NSString * const TFCascadeFilename = @"haarcascade_TF_3";//Strings of haar file names
@@ -26,6 +36,8 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    measurementReading = 0;
     
     //Create string of haar file path    
     NSString *TF_cascade_name = [[NSBundle mainBundle] pathForResource:TFCascadeFilename ofType:@"xml"];
@@ -61,6 +73,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     _alignmentImage.alpha = 0.0;
     _captureButton.alpha = 1.0;
     
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,20 +85,21 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
 - (IBAction)StartCapture:(id)sender
 {
     //toggle video camera bassed on button press
-    if (!self.videoCamera.running)
+    if (!measurementReading)
     {
-        [self.videoCamera start];
+        measurementReading = 1;
         _alignmentImage.alpha = 0.3;
         _captureButton.alpha = 0.5;
         //_captureButton.backgroundColor = [UIColor redColor];
     }
     
     
-    else if (self.videoCamera.running)
+    else if (measurementReading)
     {
-        [self.videoCamera stop];
+        measurementReading = 0;
         _alignmentImage.alpha = 0.0;
         _captureButton.alpha = 1.0;
+        self.measurementText.text = @"-.-- μL";
         //_captureButton.backgroundColor = nil;
     }
     
@@ -103,18 +117,22 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     box_height = 140;
     box_width = 700;
     
+    if (measurementReading)
+    {
     cv::Rect myROI(offset_x, offset_y, box_width, box_height);
-    
     cv::Mat croppedImage = image(myROI);
     [self detectAndDisplay:image detectionROI:croppedImage];
+        
+    }
 
     timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
     
     //NSLog(@"%@",[NSString stringWithFormat:@"FPS: %.3g", (1/(timeInMiliseconds - oldTimeInMiliseconds))]);
-    //NSLog(@"%@",[NSString stringWithFormat:@"%.3g μL", (syringeVolumeInMicroLitres)]);
+    //NSLog(@"%@",[NSString stringWithFormat:@"%.3g μL", (( )]);
     
     NSString *measurement = [NSString stringWithFormat:@"%.3g μL", (syringeVolumeInMicroLitres)];
-    self.measurementText.text = measurement;
+    //self.measurementText.text = measurement;
+    [self.measurementText performSelectorOnMainThread : @ selector(setText : ) withObject:measurement waitUntilDone:YES];//display measurement
 }
 
 /** detectAndDisplay */
@@ -177,7 +195,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
         line(frame,
              cvPoint((TFs[0].x + TFs[0].width*0.5) + offset_x, (TFs[0].y+ TFs[0].height*0.5) + offset_y),
              cvPoint((FFs[0].x + FFs[0].width*0.5) + offset_x, (FFs[0].y+ FFs[0].height*0.5) + offset_y),
-             cvScalar(0,255,255), 2 );
+             cvScalar(255,0,255), 2 );
         TFtoFF = sqrt(pow(((FFs[0].x + FFs[0].width*0.5) - (TFs[0].x + TFs[0].width*0.5)),2)
                           + pow(((FFs[0].y+ FFs[0].height*0.5) - (TFs[0].y+ TFs[0].height*0.5)),2));
         
@@ -189,12 +207,8 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
                        + pow(((FFs[0].y+ FFs[0].height*0.5) - (TIPs[0].y+ TIPs[0].height*0.5)),2));
     }
     
-    displacementInMM = (60.0 / (double)FFtoTIP) * (double)TFtoFF;
-    
-    //-- 37.33mm for 30 units
-    //--37.33mm / 30 = 1.244333 mm per unit
-    
-    syringeVolumeInMicroLitres = (displacementInMM / 1.244333 ); // U-100 syringe is 100 units per 1mL or cc
+    displacementInMM = ((syringeBodyLength / (double)FFtoTIP) * (double)TFtoFF) - plungerZeroDisplacementInMM;
+    syringeVolumeInMicroLitres = ((displacementInMM / unitsPerMM) * unitScalarOffset) + unitAdditiveOffset;
     
 }
 

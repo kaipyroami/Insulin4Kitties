@@ -40,6 +40,7 @@ using namespace std;
     int TFtoFF;
     double displacementInMM;
     double syringeVolumeInMicroLitres; // U-100 syringe is 100 units per 1mL or cc
+    bool measurementReading;
     
     
 }
