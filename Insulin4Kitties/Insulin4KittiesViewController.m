@@ -66,8 +66,9 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     self.videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetiFrame1280x720;
     self.videoCamera.defaultFPS = 10;
     self.videoCamera.grayscaleMode = NO;
+    [self.videoCamera start];
     
-    self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeRight; // Does not seem to be working correctly
+    //self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscape; // Does not seem to be working correctly
     
     //make syringe image invisable and button at full opacity
     _alignmentImage.alpha = 0.0;
@@ -90,6 +91,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
         measurementReading = 1;
         _alignmentImage.alpha = 0.3;
         _captureButton.alpha = 0.5;
+        //[self.videoCamera start];
         //_captureButton.backgroundColor = [UIColor redColor];
     }
     
@@ -100,6 +102,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
         _alignmentImage.alpha = 0.0;
         _captureButton.alpha = 1.0;
         self.measurementText.text = @"-.-- μL";
+        //[self.videoCamera stop];
         //_captureButton.backgroundColor = nil;
     }
     
@@ -111,7 +114,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     
     //Location fo detection box in FOV
     offset_x = 280;
-    offset_y = 210;
+    offset_y = 310;
     
     // Dimensions of detection box
     box_height = 140;
@@ -119,9 +122,9 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     
     if (measurementReading)
     {
-    cv::Rect myROI(offset_x, offset_y, box_width, box_height);
-    cv::Mat croppedImage = image(myROI);
-    [self detectAndDisplay:image detectionROI:croppedImage];
+        cv::Rect myROI(offset_x, offset_y, box_width, box_height);
+        cv::Mat croppedImage = image(myROI);
+        [self detectAndDisplay:image detectionROI:croppedImage];
         
     }
 
