@@ -24,7 +24,6 @@
 		274E5F6C16E988CF007233B0 /* haarcascade_TIP_LOW_ERR.xml in Resources */ = {isa = PBXBuildFile; fileRef = 274E5F6816E988CF007233B0 /* haarcascade_TIP_LOW_ERR.xml */; };
 		274E5F6D16E988CF007233B0 /* haarcascade_FF_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 274E5F6916E988CF007233B0 /* haarcascade_FF_3.xml */; };
 		274E5F7416E9D0F6007233B0 /* MyCvVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E5F7316E9D0F6007233B0 /* MyCvVideoCamera.m */; };
-		274E5F7616E9D526007233B0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E5F7516E9D526007233B0 /* opencv2.framework */; };
 		274E9C06169E8690009CA5D5 /* OpenCV_Logo_with_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */; };
 		27B1AE2A16D8175F00F7376D /* haarcascade_TF_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */; };
 		27B1AE2B16D8175F00F7376D /* haarcascade_TF_3_2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */; };
@@ -52,6 +51,7 @@
 		27D12E441692399A00F5DCF8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E431692399A00F5DCF8 /* CoreMedia.framework */; };
 		27D12E46169239A300F5DCF8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E45169239A300F5DCF8 /* CoreVideo.framework */; };
 		27D12E48169239B300F5DCF8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E47169239B300F5DCF8 /* QuartzCore.framework */; };
+		27DA6B6916EAA34A0043C60F /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DA6B6816EAA34A0043C60F /* opencv2.framework */; };
 		27F59FEB16B6302600557554 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F59FEA16B6302600557554 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +85,6 @@
 		274E5F6916E988CF007233B0 /* haarcascade_FF_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_FF_3.xml; sourceTree = "<group>"; };
 		274E5F7216E9D0F6007233B0 /* MyCvVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCvVideoCamera.h; sourceTree = "<group>"; };
 		274E5F7316E9D0F6007233B0 /* MyCvVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCvVideoCamera.m; sourceTree = "<group>"; };
-		274E5F7516E9D526007233B0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenCV_Logo_with_text.png; sourceTree = "<group>"; };
 		27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3.xml; sourceTree = "<group>"; };
 		27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3_2.xml; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		27D12E431692399A00F5DCF8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		27D12E45169239A300F5DCF8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		27D12E47169239B300F5DCF8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		27DA6B6816EAA34A0043C60F /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		27F59FEA16B6302600557554 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				274E5F7616E9D526007233B0 /* opencv2.framework in Frameworks */,
+				27DA6B6916EAA34A0043C60F /* opencv2.framework in Frameworks */,
 				27F59FEB16B6302600557554 /* ImageIO.framework in Frameworks */,
 				27D12DFF169205A400F5DCF8 /* UIKit.framework in Frameworks */,
 				27D12E48169239B300F5DCF8 /* QuartzCore.framework in Frameworks */,
@@ -177,7 +177,7 @@
 		27D12DFD169205A400F5DCF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				274E5F7516E9D526007233B0 /* opencv2.framework */,
+				27DA6B6816EAA34A0043C60F /* opencv2.framework */,
 				27F59FEA16B6302600557554 /* ImageIO.framework */,
 				27D12E47169239B300F5DCF8 /* QuartzCore.framework */,
 				27D12E45169239A300F5DCF8 /* CoreVideo.framework */,
