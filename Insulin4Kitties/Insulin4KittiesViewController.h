@@ -16,6 +16,7 @@
 #include <opencv2/features2d/features2d.hpp>
 #include <iostream>
 #include <math.h>
+#import "MyCvVideoCamera.h"
 
 
 using namespace cv;
@@ -24,7 +25,7 @@ using namespace std;
 
 @interface Insulin4KittiesViewController : UIViewController <CvVideoCameraDelegate>
 {
-    CvVideoCamera *_videoCamera;
+    MyCvVideoCamera *_videoCamera;
     
     cv::CascadeClassifier TF_cascade;
     cv::CascadeClassifier FF_cascade;
@@ -53,7 +54,7 @@ using namespace std;
 
 @property (weak, nonatomic) IBOutlet UILabel *measurementText;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewer;
-@property (nonatomic, retain) CvVideoCamera *videoCamera;
+@property (nonatomic, retain) MyCvVideoCamera *videoCamera;
 @property (weak, nonatomic) IBOutlet UIImageView *alignmentImage;
 @property (weak, nonatomic) IBOutlet UIButton *captureButton;
 

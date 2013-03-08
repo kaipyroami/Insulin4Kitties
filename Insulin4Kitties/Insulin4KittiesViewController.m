@@ -12,6 +12,8 @@
 // U-100 syringe is 100 units per 1mL or cc
 
 #import "Insulin4KittiesViewController.h"
+#import "MyCvVideoCamera.h"
+
 
 #define detectMinSize 80
 #define unitsPerMM 1.244333
@@ -31,6 +33,9 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
 @end
 
 @implementation Insulin4KittiesViewController
+
+
+//////////////////////////////viewDidLoad///////////////////////////////////////////////////////////////////////////
 
 - (void)viewDidLoad
 {
@@ -58,7 +63,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     }
     
     //attach video camera output to imageViewer
-    self.videoCamera = [[CvVideoCamera alloc] initWithParentView:_imageViewer];
+    self.videoCamera = [[MyCvVideoCamera alloc] initWithParentView:_imageViewer];
     self.videoCamera.delegate = self;
     
     //Configure camera
@@ -68,7 +73,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     self.videoCamera.grayscaleMode = NO;
     [self.videoCamera start];
     
-    //self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeRight; // Does not seem to be working correctly
+    self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeLeft; // Does not seem to be working correctly
     
     //make syringe image invisable and button at full opacity
     _alignmentImage.alpha = 0.0;
@@ -77,11 +82,15 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     
 }
 
+//////////////////////////////didRecieveMemoryWarning///////////////////////////////////////////////////////////////
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//////////////////////////////StartCapture///////////////////////////////////////////////////////////////////////////
 
 - (IBAction)StartCapture:(id)sender
 {
@@ -107,6 +116,8 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     }
     
 }
+
+//////////////////////////////processImage////////////////////////////////////////////////////////////////////////////
 
 - (void)processImage:(Mat&)image
 {
@@ -138,7 +149,8 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     [self.measurementText performSelectorOnMainThread : @ selector(setText : ) withObject:measurement waitUntilDone:YES];//display measurement
 }
 
-/** detectAndDisplay */
+//////////////////////////////detectAndDisplay/////////////////////////////////////////////////////////////////////////
+
 - (void)detectAndDisplay:(Mat&) frame
              detectionROI:(Mat&) ROI_frame
 {

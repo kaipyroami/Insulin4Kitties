@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMp-Xt-MY8">
-                                <color key="backgroundColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.29999999999999999"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1280" id="9dB-MH-Ktm"/>
@@ -157,6 +157,21 @@
         <image name="OpenCV_Logo_with_text.png" width="600" height="739"/>
         <image name="Syringe_Overlay.png" width="3728" height="547"/>
     </resources>
+    <classes>
+        <class className="Insulin4KittiesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Insulin4KittiesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="StartCapture:"/>
+                <relationship kind="outlet" name="alignmentImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="captureButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageViewer" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="measurementText" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

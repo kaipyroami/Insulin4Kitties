@@ -23,6 +23,8 @@
 		274E5F6B16E988CF007233B0 /* haarcascade_TF_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 274E5F6716E988CF007233B0 /* haarcascade_TF_4.xml */; };
 		274E5F6C16E988CF007233B0 /* haarcascade_TIP_LOW_ERR.xml in Resources */ = {isa = PBXBuildFile; fileRef = 274E5F6816E988CF007233B0 /* haarcascade_TIP_LOW_ERR.xml */; };
 		274E5F6D16E988CF007233B0 /* haarcascade_FF_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 274E5F6916E988CF007233B0 /* haarcascade_FF_3.xml */; };
+		274E5F7416E9D0F6007233B0 /* MyCvVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E5F7316E9D0F6007233B0 /* MyCvVideoCamera.m */; };
+		274E5F7616E9D526007233B0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E5F7516E9D526007233B0 /* opencv2.framework */; };
 		274E9C06169E8690009CA5D5 /* OpenCV_Logo_with_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */; };
 		27B1AE2A16D8175F00F7376D /* haarcascade_TF_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */; };
 		27B1AE2B16D8175F00F7376D /* haarcascade_TF_3_2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */; };
@@ -43,7 +45,6 @@
 		27D12E25169205A400F5DCF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E00169205A400F5DCF8 /* Foundation.framework */; };
 		27D12E2D169205A400F5DCF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27D12E2B169205A400F5DCF8 /* InfoPlist.strings */; };
 		27D12E30169205A400F5DCF8 /* Insulin4KittiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D12E2F169205A400F5DCF8 /* Insulin4KittiesTests.m */; };
-		27D12E3A16920C5100F5DCF8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3916920C5100F5DCF8 /* opencv2.framework */; };
 		27D12E3C1692395300F5DCF8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3B1692395300F5DCF8 /* Accelerate.framework */; };
 		27D12E3E1692396000F5DCF8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3D1692396000F5DCF8 /* AssetsLibrary.framework */; };
 		27D12E401692396500F5DCF8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D12E3F1692396500F5DCF8 /* AVFoundation.framework */; };
@@ -82,6 +83,9 @@
 		274E5F6716E988CF007233B0 /* haarcascade_TF_4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_4.xml; sourceTree = "<group>"; };
 		274E5F6816E988CF007233B0 /* haarcascade_TIP_LOW_ERR.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TIP_LOW_ERR.xml; sourceTree = "<group>"; };
 		274E5F6916E988CF007233B0 /* haarcascade_FF_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_FF_3.xml; sourceTree = "<group>"; };
+		274E5F7216E9D0F6007233B0 /* MyCvVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCvVideoCamera.h; sourceTree = "<group>"; };
+		274E5F7316E9D0F6007233B0 /* MyCvVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCvVideoCamera.m; sourceTree = "<group>"; };
+		274E5F7516E9D526007233B0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenCV_Logo_with_text.png; sourceTree = "<group>"; };
 		27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3.xml; sourceTree = "<group>"; };
 		27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3_2.xml; sourceTree = "<group>"; };
@@ -108,7 +112,6 @@
 		27D12E2C169205A400F5DCF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27D12E2E169205A400F5DCF8 /* Insulin4KittiesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Insulin4KittiesTests.h; sourceTree = "<group>"; };
 		27D12E2F169205A400F5DCF8 /* Insulin4KittiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Insulin4KittiesTests.m; sourceTree = "<group>"; };
-		27D12E3916920C5100F5DCF8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		27D12E3B1692395300F5DCF8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		27D12E3D1692396000F5DCF8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		27D12E3F1692396500F5DCF8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274E5F7616E9D526007233B0 /* opencv2.framework in Frameworks */,
 				27F59FEB16B6302600557554 /* ImageIO.framework in Frameworks */,
 				27D12DFF169205A400F5DCF8 /* UIKit.framework in Frameworks */,
 				27D12E48169239B300F5DCF8 /* QuartzCore.framework in Frameworks */,
@@ -135,7 +139,6 @@
 				27D12E3E1692396000F5DCF8 /* AssetsLibrary.framework in Frameworks */,
 				27D12E3C1692395300F5DCF8 /* Accelerate.framework in Frameworks */,
 				27D12E01169205A400F5DCF8 /* Foundation.framework in Frameworks */,
-				27D12E3A16920C5100F5DCF8 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +177,7 @@
 		27D12DFD169205A400F5DCF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				274E5F7516E9D526007233B0 /* opencv2.framework */,
 				27F59FEA16B6302600557554 /* ImageIO.framework */,
 				27D12E47169239B300F5DCF8 /* QuartzCore.framework */,
 				27D12E45169239A300F5DCF8 /* CoreVideo.framework */,
@@ -182,7 +186,6 @@
 				27D12E3F1692396500F5DCF8 /* AVFoundation.framework */,
 				27D12E3D1692396000F5DCF8 /* AssetsLibrary.framework */,
 				27D12E3B1692395300F5DCF8 /* Accelerate.framework */,
-				27D12E3916920C5100F5DCF8 /* opencv2.framework */,
 				27D12DFE169205A400F5DCF8 /* UIKit.framework */,
 				27D12E00169205A400F5DCF8 /* Foundation.framework */,
 				27D12E02169205A400F5DCF8 /* CoreGraphics.framework */,
@@ -194,6 +197,8 @@
 		27D12E04169205A400F5DCF8 /* Insulin4Kitties */ = {
 			isa = PBXGroup;
 			children = (
+				274E5F7216E9D0F6007233B0 /* MyCvVideoCamera.h */,
+				274E5F7316E9D0F6007233B0 /* MyCvVideoCamera.m */,
 				27D12E0D169205A400F5DCF8 /* Insulin4KittiesAppDelegate.h */,
 				27D12E0E169205A400F5DCF8 /* Insulin4KittiesAppDelegate.m */,
 				27D12E16169205A400F5DCF8 /* MainStoryboard.storyboard */,
@@ -392,6 +397,7 @@
 				27D12E0F169205A400F5DCF8 /* Insulin4KittiesAppDelegate.m in Sources */,
 				27D12E1B169205A400F5DCF8 /* Insulin4KittiesViewController.m in Sources */,
 				274CF8261699600200D422D5 /* InfoScreenViewController.m in Sources */,
+				274E5F7416E9D0F6007233B0 /* MyCvVideoCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
