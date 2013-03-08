@@ -68,7 +68,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     self.videoCamera.grayscaleMode = NO;
     [self.videoCamera start];
     
-    //self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscape; // Does not seem to be working correctly
+    //self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeRight; // Does not seem to be working correctly
     
     //make syringe image invisable and button at full opacity
     _alignmentImage.alpha = 0.0;
@@ -114,7 +114,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     
     //Location fo detection box in FOV
     offset_x = 280;
-    offset_y = 310;
+    offset_y = 210;
     
     // Dimensions of detection box
     box_height = 140;
