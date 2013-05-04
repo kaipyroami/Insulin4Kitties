@@ -21,11 +21,12 @@
 #define plungerZeroDisplacementInMM 8.27
 #define unitScalarOffset 1
 #define unitAdditiveOffset -1
+#define SAMPLE_SIZE 5
 
 
-NSString * const TFCascadeFilename = @"haarcascade_TF_3";//Strings of haar file names
-NSString * const FFCascadeFilename = @"haarcascade_FF_2";
-NSString * const TIPCascadeFilename = @"haarcascade_TIP";
+NSString * const TFCascadeFilename = @"haarcascade_TF_4_2";//Strings of haar file names
+NSString * const FFCascadeFilename = @"haarcascade_FF_3";
+NSString * const TIPCascadeFilename = @"haarcascade_TIP_LOW_ERR";
 
 @interface Insulin4KittiesViewController ()
 
@@ -33,7 +34,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
 @end
 
 @implementation Insulin4KittiesViewController
-
+@synthesize videoCamera;
 
 //////////////////////////////viewDidLoad///////////////////////////////////////////////////////////////////////////
 
@@ -42,7 +43,8 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    measurementReading = 0;
+    takingMeasurementReading = 0;
+    measurementSample = [[NSMutableArray alloc] init];
     
     //Create string of haar file path    
     NSString *TF_cascade_name = [[NSBundle mainBundle] pathForResource:TFCascadeFilename ofType:@"xml"];
@@ -62,18 +64,22 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
         NSLog(@"Could not load TIP cascade!");
     }
     
+    [self.captureProgress setProgress:0.0 animated:YES];
+    
     //attach video camera output to imageViewer
     self.videoCamera = [[MyCvVideoCamera alloc] initWithParentView:_imageViewer];
     self.videoCamera.delegate = self;
+    
     
     //Configure camera
     self.videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     self.videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetiFrame1280x720;
     self.videoCamera.defaultFPS = 10;
     self.videoCamera.grayscaleMode = NO;
+//    self.videoCamera.
     [self.videoCamera start];
     
-    self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeLeft; // Does not seem to be working correctly
+    self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeRight;
     
     //make syringe image invisable and button at full opacity
     _alignmentImage.alpha = 0.0;
@@ -95,24 +101,25 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
 - (IBAction)StartCapture:(id)sender
 {
     //toggle video camera bassed on button press
-    if (!measurementReading)
+    if (!takingMeasurementReading)
     {
-        measurementReading = 1;
+        takingMeasurementReading = 1;
         _alignmentImage.alpha = 0.3;
         _captureButton.alpha = 0.5;
+        [measurementSample removeAllObjects];
         //[self.videoCamera start];
-        //_captureButton.backgroundColor = [UIColor redColor];
     }
     
     
-    else if (measurementReading)
+    else if (takingMeasurementReading)
     {
-        measurementReading = 0;
+        takingMeasurementReading = 0;
         _alignmentImage.alpha = 0.0;
         _captureButton.alpha = 1.0;
-        self.measurementText.text = @"-.-- μL";
+        self.measurementText.text = @"-.-- Units";
+        [measurementSample removeAllObjects];
+        [self.captureProgress setProgress:0.0];
         //[self.videoCamera stop];
-        //_captureButton.backgroundColor = nil;
     }
     
 }
@@ -125,28 +132,54 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
     
     //Location fo detection box in FOV
     offset_x = 280;
-    offset_y = 210;
+    offset_y = 370;
     
     // Dimensions of detection box
     box_height = 140;
     box_width = 700;
     
-    if (measurementReading)
+    if (takingMeasurementReading)
     {
         cv::Rect myROI(offset_x, offset_y, box_width, box_height);
         cv::Mat croppedImage = image(myROI);
         [self detectAndDisplay:image detectionROI:croppedImage];
         
     }
+    
+    if ([measurementSample count] > SAMPLE_SIZE)
+    {
+        double valueToBeDisplayed = [self statisticalMean:*measurementSample];
+        
+        NSString *measurement = [NSString stringWithFormat:@"%.3g Units", (double)valueToBeDisplayed];
+        [self.measurementText performSelectorOnMainThread : @ selector(setText:) withObject:measurement waitUntilDone:YES];//display measurement
+        NSLog(@"%@",[NSString stringWithFormat:@"Value to be displayed: %.3g",(double)valueToBeDisplayed]);
+        
+        takingMeasurementReading = 0;
+        _alignmentImage.alpha = 0.0;
+        _captureButton.alpha = 1.0;
+        [self.captureProgress setProgress:1.0];
+        
+    }
 
-    timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
+    //timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
     
     //NSLog(@"%@",[NSString stringWithFormat:@"FPS: %.3g", (1/(timeInMiliseconds - oldTimeInMiliseconds))]);
     //NSLog(@"%@",[NSString stringWithFormat:@"%.3g μL", (( )]);
     
-    NSString *measurement = [NSString stringWithFormat:@"%.3g μL", (syringeVolumeInMicroLitres)];
-    //self.measurementText.text = measurement;
-    [self.measurementText performSelectorOnMainThread : @ selector(setText : ) withObject:measurement waitUntilDone:YES];//display measurement
+    //NSString *measurement = [NSString stringWithFormat:@"%.3g μL", (valueToBeDisplayed)];
+    //[self.measurementText performSelectorOnMainThread : @ selector(setText : ) withObject:measurement waitUntilDone:YES];//display measurement
+    NSLog(@"%@",[NSString stringWithFormat:@"Length of String: %.2lu",(unsigned long)[measurementSample count]]);
+    
+    //_captureProgress.progress = [measurementSample count];
+    //[self.captureProgress setProgress:(float)[measurementSample count] / (float)SAMPLE_SIZE];
+    NSNumber *progress = [NSNumber numberWithFloat:((float)[measurementSample count] / (float)SAMPLE_SIZE)];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.captureProgress setProgress:[progress floatValue] animated: YES];
+    });
+    
+    NSLog(@"%@",[NSString stringWithFormat:@"Progress to be displayed: %f",[self.captureProgress progress]]);
+    
 }
 
 //////////////////////////////detectAndDisplay/////////////////////////////////////////////////////////////////////////
@@ -220,13 +253,48 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP";
              cvScalar(0,255,255), 2 );
         FFtoTIP = sqrt(pow(((FFs[0].x + FFs[0].width*0.5) - (TIPs[0].x + TIPs[0].width*0.5)),2)
                        + pow(((FFs[0].y+ FFs[0].height*0.5) - (TIPs[0].y+ TIPs[0].height*0.5)),2));
+
+    
+        displacementInMM = ((syringeBodyLength / (double)FFtoTIP) * (double)TFtoFF) - plungerZeroDisplacementInMM;
+        syringeVolumeInMicroLitres = ((displacementInMM / unitsPerMM) * unitScalarOffset) + unitAdditiveOffset;
+    
+    
+        // Add readings to array to find average
+        NSNumber*num = [NSNumber numberWithDouble:syringeVolumeInMicroLitres];
+        [measurementSample addObject:num];
+        
     }
-    
-    displacementInMM = ((syringeBodyLength / (double)FFtoTIP) * (double)TFtoFF) - plungerZeroDisplacementInMM;
-    syringeVolumeInMicroLitres = ((displacementInMM / unitsPerMM) * unitScalarOffset) + unitAdditiveOffset;
-    
 }
 
+//////////////////////////////statisticalMean//////////////////////////////////////////////////////////////////////////
+                              
+-(double)statisticalMean:(NSArray&)dataIn
+{
+    double mean = 0;
+    double sum = 0;
+    
+    for (NSUInteger i = 0 ; i < [measurementSample count]; i++)
+    {
+        NSNumber *tempNum = [measurementSample objectAtIndex:i];
+        sum += [tempNum doubleValue];
+    }
+    
+    mean = sum/ SAMPLE_SIZE;
+    
+    return mean;
+}
 
+//////////////////////////////StandardDeviation////////////////////////////////////////////////////////////////////////
 
+-(double)standardDeviation:(NSArray&)dataIn;
+{
+    double stdDev = 0;
+    
+    for (NSUInteger i = 0; i < [measurementSample count]; i++)
+    {
+        //do something
+    }
+    
+    return stdDev;
+}
 @end

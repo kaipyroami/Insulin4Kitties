@@ -23,7 +23,7 @@ using namespace cv;
 using namespace std;
 
 
-@interface Insulin4KittiesViewController : UIViewController <CvVideoCameraDelegate>
+@interface Insulin4KittiesViewController : UIViewController <MyCvVideoCameraDelegate>
 {
     MyCvVideoCamera *_videoCamera;
     
@@ -41,7 +41,8 @@ using namespace std;
     int TFtoFF;
     double displacementInMM;
     double syringeVolumeInMicroLitres; // U-100 syringe is 100 units per 1mL or cc
-    bool measurementReading;
+    bool takingMeasurementReading;
+    NSMutableArray *measurementSample; // Holds sampled values for statistical measurement
     
     
 }
@@ -50,8 +51,11 @@ using namespace std;
 - (void)processImage:(Mat&)image;
 - (void)detectAndDisplay:(Mat&) frame
              detectionROI:(Mat&) ROI_frame;
+-(double)statisticalMean:(NSArray&)dataIn;
+-(double)standardDeviation:(NSArray&)dataIn;
 
-
+@property (weak, nonatomic) IBOutlet UILabel *SampleProgressLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *captureProgress;
 @property (weak, nonatomic) IBOutlet UILabel *measurementText;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewer;
 @property (nonatomic, retain) MyCvVideoCamera *videoCamera;

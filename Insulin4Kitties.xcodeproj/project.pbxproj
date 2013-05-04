@@ -25,6 +25,8 @@
 		274E5F6D16E988CF007233B0 /* haarcascade_FF_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 274E5F6916E988CF007233B0 /* haarcascade_FF_3.xml */; };
 		274E5F7416E9D0F6007233B0 /* MyCvVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E5F7316E9D0F6007233B0 /* MyCvVideoCamera.m */; };
 		274E9C06169E8690009CA5D5 /* OpenCV_Logo_with_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */; };
+		27A5BEFF1735709A00E4DA20 /* Syringe_Overlay_Inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A5BEFE1735709A00E4DA20 /* Syringe_Overlay_Inverted.png */; };
+		27A5BF011735732F00E4DA20 /* App GUI.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A5BF001735732F00E4DA20 /* App GUI.png */; };
 		27B1AE2A16D8175F00F7376D /* haarcascade_TF_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */; };
 		27B1AE2B16D8175F00F7376D /* haarcascade_TF_3_2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */; };
 		27B1AE2D16D94CB400F7376D /* haarcascade_TIP.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27B1AE2C16D94CB400F7376D /* haarcascade_TIP.xml */; };
@@ -86,6 +88,8 @@
 		274E5F7216E9D0F6007233B0 /* MyCvVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCvVideoCamera.h; sourceTree = "<group>"; };
 		274E5F7316E9D0F6007233B0 /* MyCvVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCvVideoCamera.m; sourceTree = "<group>"; };
 		274E9C05169E8690009CA5D5 /* OpenCV_Logo_with_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenCV_Logo_with_text.png; sourceTree = "<group>"; };
+		27A5BEFE1735709A00E4DA20 /* Syringe_Overlay_Inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Syringe_Overlay_Inverted.png; sourceTree = "<group>"; };
+		27A5BF001735732F00E4DA20 /* App GUI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App GUI.png"; sourceTree = "<group>"; };
 		27B1AE2816D8175F00F7376D /* haarcascade_TF_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3.xml; sourceTree = "<group>"; };
 		27B1AE2916D8175F00F7376D /* haarcascade_TF_3_2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TF_3_2.xml; sourceTree = "<group>"; };
 		27B1AE2C16D94CB400F7376D /* haarcascade_TIP.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_TIP.xml; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 		27D12E05169205A400F5DCF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27A5BF001735732F00E4DA20 /* App GUI.png */,
+				27A5BEFE1735709A00E4DA20 /* Syringe_Overlay_Inverted.png */,
 				274E5F6616E988CF007233B0 /* haarcascade_TF_4_2.xml */,
 				274E5F6716E988CF007233B0 /* haarcascade_TF_4.xml */,
 				274E5F6816E988CF007233B0 /* haarcascade_TIP_LOW_ERR.xml */,
@@ -359,6 +365,8 @@
 				274E5F6B16E988CF007233B0 /* haarcascade_TF_4.xml in Resources */,
 				274E5F6C16E988CF007233B0 /* haarcascade_TIP_LOW_ERR.xml in Resources */,
 				274E5F6D16E988CF007233B0 /* haarcascade_FF_3.xml in Resources */,
+				27A5BEFF1735709A00E4DA20 /* Syringe_Overlay_Inverted.png in Resources */,
+				27A5BF011735732F00E4DA20 /* App GUI.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
