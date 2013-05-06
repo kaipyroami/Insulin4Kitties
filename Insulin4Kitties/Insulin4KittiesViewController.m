@@ -237,6 +237,7 @@ NSString * const TIPCascadeFilename = @"haarcascade_TIP_LOW_ERR";
         std::vector<cv::Rect> tip;
     }
     
+    //Calculate distances between detected objects if all three features detected
     
     if( !FFs.empty() && !TFs.empty() && !TIPs.empty())
     {
